@@ -12,7 +12,7 @@ export const HeroesList = ({ publisher }) => {
 
 
     return (
-        <div className="main-box">
+        <div className="main-box animate__animated animate__fadeIn">
            {
                heroes.map((heroe) => {
                    return (
