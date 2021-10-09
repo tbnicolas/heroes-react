@@ -6,11 +6,11 @@ import { MarvelScreen } from '../components/marvel/MarvelScreen';
 import { Navbar } from '../components/ui/Navbar';
 import { SearchScreen } from '../components/search/SearchScreen';
 
-export const DashBoardRoutes = () => {
+export const DashBoardRoutes = (/* { history } */) => {
     return (
         <>
             
-            <Navbar />
+            <Navbar /* history={ history } *//>
 
             <div className="container mt-2">
 
