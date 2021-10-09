@@ -1,5 +1,9 @@
 import React from 'react'
 import { getHeroesByPublisher } from '../../selectors/getHeroesByPublisher'
+import { HeroCard } from './HeroCard';
+
+
+import './heroes.css';
 
 export const HeroesList = ({ publisher }) => {
 
@@ -7,16 +11,29 @@ export const HeroesList = ({ publisher }) => {
 
 
     return (
-        <ul>
+        <div className="main-box">
            {
                heroes.map((heroe) => {
                    return (
-                       <li key={heroe.id}>
-                            { heroe.superhero }
-                       </li>
+                       <HeroCard 
+                            key={heroe.id}
+                            { ...heroe }
+                       >
+                       
+                       </HeroCard>
+                       /* <div style={
+                           {
+                               height: 70,
+                               width:70,
+                               background: 'red',
+                               margin: 20
+                               
+                           }
+                       }>
+                       </div> */
                    );
                })
            } 
-        </ul>
+        </div>
     )
 }
