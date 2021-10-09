@@ -4,11 +4,14 @@ import { types } from '../../types/type';
 
 export const LoginScreen = ({ history }) => {
     
-    const { user, dispatch } = useContext(AutContext);
+    const { dispatch } = useContext(AutContext);
+
+
 
     const handleClick = () => {
 
-        //history.push('/');
+        const lastPath = localStorage.getItem('lastPath') || '/';
+        
         const action = {
             type: types.login,
             payload: {
@@ -16,7 +19,7 @@ export const LoginScreen = ({ history }) => {
             }
         }
         dispatch(action);
-        history.replace('/');
+        history.replace(lastPath);
     }
     
     return (
