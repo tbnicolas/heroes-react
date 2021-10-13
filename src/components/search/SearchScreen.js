@@ -9,6 +9,8 @@ export const SearchScreen = ({ history }) => {
 
     const location = useLocation();
 
+    console.log('Se ejecuto location');
+
     const { q= '' } = queryString.parse(location.search);
 
     const initialForm = {
