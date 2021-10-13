@@ -1,6 +1,10 @@
 import React, { useMemo } from 'react'
 import { useParams,Redirect } from 'react-router-dom';
+import { heroImages } from '../../helpers/heroImages';
 import { getHeroesById } from '../../selectors/getHeroeById';
+
+// import batman from '../../assets/heroes/dc-batman.jpg'; // estatico
+
 
 export const HeroScreen = ({ history }) => {
 
@@ -34,7 +38,13 @@ export const HeroScreen = ({ history }) => {
     return (
         <div className="row my-5">
             <div className="col-4">
-                <img src={`../assets/heroes/${heroeId}.jpg`} alt={superhero} className="img-thumbnail animate__animated animate__fadeInLeft"/>
+                <img 
+                    //src={`../assets/heroes/${heroeId}.jpg`} dinamico 1
+                    //src={batman} estatico
+                    src={ heroImages(`./${heroeId}.jpg`).default}
+                    alt={superhero}
+                    className="img-thumbnail animate__animated animate__fadeInLeft"
+                />
             </div>
 
             <div className="col-8">
