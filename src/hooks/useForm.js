@@ -11,7 +11,7 @@ export const useForm = ( initialState = {} ) => {
 
 
     const handleInputChange = ({ target }) => {
-
+        console.log('Se ejecuto handle');
         setValues({
             ...values,
             [ target.name ]: target.value
